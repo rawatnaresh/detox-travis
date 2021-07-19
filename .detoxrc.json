@@ -1,0 +1,44 @@
+{
+  "testRunner": "jest",
+  "runnerConfig": "e2e/config.json",
+  "skipLegacyWorkersInjection": true,
+  "apps": {
+    "ios": {
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/detoxVideoRecorder.app",
+      "build": "xcodebuild -workspace ios/detoxVideoRecorder.xcworkspace -configuration Debug -scheme detoxVideoRecorder -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max' -derivedDataPath ios/build"
+    },
+    "android": {
+      "type": "android.apk",
+      "binaryPath": "SPECIFY_PATH_TO_YOUR_APP_BINARY"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": {
+        "type": "iPhone 12 Pro Max"
+      }
+    },
+    "emulator": {
+      "type": "android.emulator",
+      "device": {
+        "avdName": "Pixel_3a_API_30_x86"
+      }
+    }
+  },
+  "configurations": {
+    "ios": {
+      "device": "simulator",
+      "app": "ios",
+      "artifacts": {
+        "rootDir": "e2e/recorder_results/ios/",
+        "pathBuilder": "./e2e/config/pathbuilder.js"
+      }
+    },
+    "android": {
+      "device": "emulator",
+      "app": "android"
+    }
+  }
+}

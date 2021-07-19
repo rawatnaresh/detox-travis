@@ -1,0 +1,10 @@
+{
+    "setupFilesAfterEnv": ["./setup.js"],
+    "testEnvironment": "./environment.js",
+    "testRunner": "jest-circus/runner",
+    "testTimeout": 120000,
+    "preset": "react-native",
+    "testRegex": "\\.e2e\\.js$",
+    "reporters": ["detox/runners/jest/streamlineReporter"],
+    "verbose": true
+}
