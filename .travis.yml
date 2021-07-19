@@ -13,6 +13,8 @@ install:
 - nvm use $NODE_VERSION
 - nvm alias default $NODE_VERSION
 
+- npm install -g yarn
+
 - brew tap wix/brew
 - brew install applesimutils
 - yarn
